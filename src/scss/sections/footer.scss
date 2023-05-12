@@ -43,7 +43,7 @@
     }
 
     &-ul {
-      & > a {
+      & > li > a {
         text-decoration: none;
         color: $base-white;
         display: block;

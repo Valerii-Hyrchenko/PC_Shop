@@ -30,6 +30,15 @@
 
     &-a {
       text-decoration: none;
+      color: $base-white;
+    }
+
+    &-li {
+      color: $base-white;
+      font-weight: 500;
+      @include toRem(font-size, 18);
+      line-height: 125%;
+      transition: 300ms all linear;
       transition: 300ms all linear;
 
       @include adaptive1110 {
@@ -47,10 +56,6 @@
       &:hover {
         transform: scale(1.1);
         transition: 300ms all linear;
-        & > li {
-          transition: 300ms all linear;
-          color: $base-blue;
-        }
       }
 
       @keyframes showHeader {
@@ -74,14 +79,6 @@
           transform: scale(0, 0);
         }
       }
-    }
-
-    &-li {
-      color: $base-white;
-      font-weight: 500;
-      @include toRem(font-size, 18);
-      line-height: 125%;
-      transition: 300ms all linear;
     }
   }
 
