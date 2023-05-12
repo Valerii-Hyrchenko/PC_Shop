@@ -43,9 +43,7 @@
     }
 
     &-ul {
-      & > li > a {
-        text-decoration: none;
-        color: $base-white;
+      & > li {
         display: block;
         font-weight: 500;
         @include toRem(font-size, 16);
@@ -53,6 +51,10 @@
 
         &:not(:last-of-type) {
           @include toRem(margin-bottom, 16);
+        }
+        & > a {
+          text-decoration: none;
+          color: $base-white;
         }
       }
 
