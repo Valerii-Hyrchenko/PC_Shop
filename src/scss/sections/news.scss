@@ -1,0 +1,280 @@
+.news {
+  display: flex;
+  justify-content: space-between;
+  padding: 3.75rem 0 7.5rem;
+
+  @include adaptive1240 {
+    flex-wrap: wrap;
+    justify-content: center;
+    @include toRem(row-gap, 60);
+  }
+
+  @include adaptive480 {
+    padding: 3.75rem 0;
+  }
+
+  &__articles {
+    &-container {
+      display: flex;
+      justify-content: space-between;
+
+      @include adaptive1110 {
+        flex-direction: column;
+        @include toRem(row-gap, 40);
+      }
+    }
+
+    &-btn {
+      &-wrap {
+        @include toRem(max-width, 192);
+        margin: 1.5rem auto 0;
+      }
+      @include toRem(font-size, 16);
+      font-weight: 500;
+
+      text-align: center;
+      color: $base-white;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      background-color: transparent;
+      padding: 1.07rem 2rem;
+      box-sizing: border-box;
+      @include toRem(width, 192);
+      cursor: pointer;
+      transition: 400ms all linear;
+
+      &:hover {
+        background-color: $base-blue;
+        transition: 400ms all linear;
+        border: 2px solid transparent;
+      }
+    }
+  }
+
+  &__article {
+    &-item {
+      box-sizing: border-box;
+      @include toRem(max-width, 306);
+
+      &:not(:last-of-type) {
+        @include toRem(margin-right, 24);
+
+        @include adaptive1110 {
+          margin-right: 0;
+        }
+      }
+
+      @include adaptive1340 {
+        @include toRem(max-width, 285);
+      }
+
+      @include adaptive1110 {
+        @include toRem(max-width, 320);
+      }
+
+      @include adaptive360 {
+        @include toRem(max-width, 300);
+      }
+    }
+
+    &-description-wrap {
+      padding: 1rem;
+      color: $base-white;
+    }
+
+    &-date {
+      font-weight: 500;
+      @include toRem(font-size, 14);
+      @include toRem(line-height, 18);
+      margin-bottom: 1rem;
+    }
+
+    &-title {
+      font-weight: 700;
+      @include toRem(font-size, 18);
+      @include toRem(line-height, 24);
+      @include toRem(margin-bottom, 17);
+    }
+
+    &-text {
+      @include toRem(font-size, 16);
+      @include toRem(line-height, 26);
+      opacity: 0.7;
+    }
+
+    &-img {
+      border-radius: 16px;
+      @include adaptive1340 {
+        @include toRem(max-width, 285);
+      }
+
+      @include adaptive1110 {
+        @include toRem(max-width, 320);
+      }
+
+      @include adaptive360 {
+        @include toRem(max-width, 300);
+      }
+    }
+  }
+
+  &__form {
+    &-wrapper {
+      background-color: $base-yellow;
+      box-sizing: border-box;
+      @include toRem(max-height, 619);
+      @include toRem(max-width, 378);
+      padding: 1.875rem 4.5rem 1.875rem 1.875rem;
+      border-radius: 16px 0px 0px 16px;
+      @include toRem(margin-right, -72);
+
+      @include adaptive1340 {
+        @include toRem(max-width, 345);
+        padding: 1.875rem 3rem 1.875rem 1.875rem;
+      }
+
+      @include adaptive1240 {
+        border-radius: 16px;
+        @include toRem(max-width, 600);
+        margin-right: 0;
+      }
+
+      @include adaptive1110 {
+        @include toRem(max-width, 500);
+      }
+
+      @include adaptive820 {
+        @include toRem(max-width, 400);
+      }
+
+      @include adaptive550 {
+        @include toRem(max-width, 350);
+      }
+
+      @include adaptive480 {
+        @include toRem(max-width, 350);
+        padding: 1.5rem;
+      }
+
+      @include adaptive360 {
+        @include toRem(max-width, 300);
+      }
+    }
+
+    &-img-wrapper {
+      @include toRem(width, 99);
+      margin: 0 0 1.5rem auto;
+
+      @include adaptive360 {
+        margin: 0 0 0.7rem auto;
+      }
+    }
+
+    &-title {
+      font-weight: 900;
+      @include toRem(font-size, 38);
+      @include toRem(line-height, 42);
+      letter-spacing: -0.02em;
+      color: $base-dark;
+      margin-bottom: 1rem;
+
+      @include adaptive360 {
+        @include toRem(font-size, 32);
+        @include toRem(line-height, 38);
+      }
+    }
+
+    &-post-title {
+      font-weight: 500;
+      @include toRem(font-size, 22);
+      @include toRem(line-height, 35);
+      color: $base-dark;
+      opacity: 0.7;
+      @include toRem(margin-bottom, 48);
+
+      @include adaptive360 {
+        @include toRem(font-size, 20);
+        @include toRem(line-height, 32);
+      }
+    }
+
+    &-input,
+    &-btn {
+      width: 100%;
+      box-sizing: border-box;
+      color: $base-white;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-weight: 500;
+      @include toRem(font-size, 16);
+      @include toRem(line-height, 20);
+      @include toRem(margin-bottom, 24);
+    }
+
+    &-input {
+      padding: 1rem 0.5rem 1rem 1rem;
+      background-color: $base-dark;
+
+      &::placeholder {
+        color: $base-white;
+      }
+    }
+
+    &-btn-wrap {
+      @include toRem(margin-bottom, 24);
+      @include adaptive1240 {
+        width: 50%;
+        margin: 0 auto 1.5rem;
+      }
+
+      @include adaptive820 {
+        width: 70%;
+      }
+
+      @include adaptive550 {
+        width: 100%;
+      }
+    }
+
+    &-btn {
+      padding: 1.125rem 0;
+      background-color: $base-blue;
+      position: relative;
+      cursor: pointer;
+      transition: 500ms all linear;
+      margin-bottom: 0;
+
+      &::before {
+        position: absolute;
+        left: 22%;
+        @include toRem(width, 20);
+        @include toRem(height, 20);
+        content: url("@img/icons/send_form.svg");
+
+        @include adaptive1110 {
+          left: 18%;
+        }
+      }
+
+      &:hover {
+        color: $base-blue;
+        background-color: transparent;
+        border: 1px solid $base-blue;
+        transition: 500ms all linear;
+      }
+    }
+
+    &-post-text {
+      font-weight: 500;
+      @include toRem(font-size, 14);
+      @include toRem(line-height, 22);
+      color: $base-dark;
+      opacity: 0.7;
+
+      @include adaptive1340 {
+        @include toRem(font-size, 13);
+        @include toRem(line-height, 20);
+      }
+    }
+  }
+}

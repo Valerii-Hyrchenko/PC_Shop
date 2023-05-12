@@ -1,0 +1,188 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 7.5rem 0;
+  position: relative;
+  z-index: 9;
+
+  @include adaptive820 {
+    flex-direction: column;
+    align-items: center;
+    @include toRem(row-gap, 60);
+    padding: 3.5rem 0;
+  }
+
+  &__logo-social {
+    &-wrap {
+      display: flex;
+      justify-content: space-between;
+      @include toRem(max-width, 176);
+      @include toRem(margin-top, 8);
+    }
+
+    &-img {
+      @include toRem(padding, 14);
+    }
+  }
+
+  &__menu {
+    &-nav {
+      display: flex;
+      justify-content: space-between;
+
+      @include adaptive480 {
+        flex-direction: column;
+        @include toRem(row-gap, 16);
+        align-items: center;
+        text-align: center;
+        border-right: 1px solid $base-light-white;
+        border-left: 1px solid $base-light-white;
+        padding: 0 2rem;
+      }
+    }
+
+    &-ul {
+      & > a {
+        text-decoration: none;
+        color: $base-white;
+        display: block;
+        font-weight: 500;
+        @include toRem(font-size, 16);
+        @include toRem(line-height, 20);
+
+        &:not(:last-of-type) {
+          @include toRem(margin-bottom, 16);
+        }
+      }
+
+      &-first {
+        @include toRem(margin-right, 86);
+
+        @include adaptive1110 {
+          @include toRem(margin-right, 55);
+        }
+
+        @include adaptive820 {
+          border-left: 1px solid $base-light-white;
+          @include toRem(padding-left, 50);
+        }
+
+        @include adaptive480 {
+          padding-left: 0;
+          margin-right: 0;
+          border: none;
+        }
+      }
+
+      &-second {
+        @include adaptive820 {
+          border-right: 1px solid $base-light-white;
+          @include toRem(padding-right, 50);
+        }
+
+        @include adaptive480 {
+          padding-right: 0;
+          margin-right: 0;
+          border: none;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    margin: auto 0 0 0;
+    &-text {
+      font-weight: 500;
+      @include toRem(font-size, 14);
+      @include toRem(line-height, 18);
+      color: $base-white;
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+
+    &-images-container {
+      display: flex;
+      align-items: center;
+    }
+
+    &-img-wrap {
+      @include toRem(margin-right, 24);
+    }
+  }
+
+  &__vertical-line {
+    @include toRem(height, 128);
+    @include toRem(width, 1);
+    opacity: 0.1;
+    background-color: $base-white;
+
+    @include adaptive820 {
+      display: none;
+    }
+  }
+
+  &-background {
+    position: relative;
+    background: linear-gradient(180deg, rgba(17, 20, 24, 0) 0%, #111418 100%),
+      linear-gradient(
+        167deg,
+        rgba(7, 110, 213, 0.06) 50.54%,
+        rgba(0, 0, 0, 0.08) 50%
+      );
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 5%;
+      left: 45%;
+      @include toRem(width, 320);
+      @include toRem(height, 320);
+      background: $base-blue;
+      opacity: 0.42;
+      filter: blur(82px);
+
+      @include adaptive820 {
+        @include toRem(width, 280);
+        @include toRem(height, 280);
+        top: 10%;
+        left: 35%;
+        opacity: 0.5;
+      }
+
+      @include adaptive480 {
+        left: 20%;
+        top: 5%;
+      }
+
+      @include adaptive360 {
+        left: 10%;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 32%;
+      right: 49%;
+      @include toRem(width, 250);
+      @include toRem(height, 250);
+      background: $base-yellow;
+      opacity: 0.3;
+      filter: blur(82px);
+
+      @include adaptive360 {
+        right: 30%;
+      }
+    }
+
+    @include adaptive1240 {
+      background: linear-gradient(180deg, rgba(17, 20, 24, 0) 0%, #111418 100%),
+        linear-gradient(
+          163deg,
+          rgba(7, 110, 213, 0.06) 50.54%,
+          rgba(0, 0, 0, 0.08) 50%
+        );
+    }
+  }
+}

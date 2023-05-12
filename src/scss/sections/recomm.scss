@@ -1,0 +1,211 @@
+.recomm {
+  padding: 7.5rem 0 3.75rem;
+  position: relative;
+
+  &__title {
+    &-wrap {
+      display: flex;
+      align-items: center;
+
+      @include adaptive1240 {
+        justify-content: center;
+      }
+
+      @include adaptive550 {
+        flex-direction: column;
+      }
+    }
+    &-text {
+      font-weight: 900;
+      @include toRem(font-size, 38);
+      @include toRem(line-height, 42);
+      letter-spacing: -0.02em;
+      color: $base-white;
+      @include toRem(margin-right, 24);
+      @include toRem(max-width, 256);
+
+      @include adaptive820 {
+        @include toRem(font-size, 34);
+        @include toRem(line-height, 38);
+      }
+
+      @include adaptive550 {
+        margin-right: 0;
+        text-align: center;
+      }
+    }
+    &-date {
+      font-weight: 100;
+      @include toRem(font-size, 72);
+      @include toRem(line-height, 79);
+      color: $base-white;
+      opacity: 0.4;
+
+      @include adaptive820 {
+        @include toRem(font-size, 60);
+        @include toRem(line-height, 65);
+      }
+    }
+  }
+
+  &__slider-wrap {
+    @include toRem(margin-top, 24);
+    overflow: hidden;
+
+    @include adaptive1240 {
+      margin: 3rem auto 0;
+    }
+  }
+
+  &__slider-items-container {
+    display: flex;
+    position: relative;
+  }
+
+  &__item {
+    &-wrap {
+      background: $base-grey;
+      border-radius: 16px;
+      @include toRem(min-width, 306);
+      padding: 0.91rem 1rem;
+      box-sizing: border-box;
+      @include toRem(margin-right, 24);
+
+      @include adaptive1340 {
+        @include toRem(min-width, 290);
+      }
+
+      @include adaptive1110 {
+        @include toRem(min-width, 320);
+      }
+
+      @include adaptive820 {
+        @include toRem(min-width, 290);
+      }
+      @include adaptive360 {
+        transform: translateX(12px);
+      }
+    }
+
+    &-img-wrapper {
+      @include toRem(width, 167);
+      margin: 0.5rem auto 0;
+
+      & > img {
+        @include adaptive820 {
+          @include toRem(width, 150);
+          @include toRem(height, 300);
+        }
+      }
+    }
+
+    &-description {
+      &-wrap {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        width: 100%;
+        padding-top: 1rem;
+        @include toRem(margin-top, 24);
+
+        @include adaptive820 {
+          padding-top: 0;
+        }
+      }
+    }
+
+    &-name,
+    &-price {
+      font-weight: 700;
+      @include toRem(font-size, 18);
+      @include toRem(line-height, 22);
+      color: $base-white;
+      @include toRem(margin-bottom, 4);
+    }
+
+    &-characteristics,
+    &-price-sale {
+      font-weight: 500;
+      @include toRem(font-size, 14);
+      @include toRem(line-height, 18);
+      margin-bottom: 1rem;
+      color: $base-white;
+      opacity: 0.7;
+    }
+
+    &-price-sale {
+      text-decoration-line: line-through;
+      @include toRem(margin-bottom, 4);
+    }
+
+    &-price {
+      margin-bottom: 0;
+    }
+
+    &-basketbtn {
+      background: transparent;
+      border: 1px solid $base-dark;
+      border-radius: 12px;
+      background-color: $base-dark;
+      box-sizing: border-box;
+      @include toRem(padding, 14);
+      cursor: pointer;
+      transition: 400ms all linear;
+
+      &::before {
+        content: url("@img/icons/header_shop_bar/basket.svg");
+        @include toRem(width, 20);
+        @include toRem(height, 20);
+      }
+
+      &:hover {
+        background-color: $base-blue;
+        transition: 400ms all linear;
+        border: 1px solid transparent;
+      }
+    }
+  }
+
+  &__slider-btn {
+    &-next {
+      position: absolute;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      top: 50%;
+      border-radius: 50%;
+      line-height: 0;
+      transition: 400ms all linear;
+      padding: 0;
+
+      &:hover {
+        background-color: $base-blue;
+        transition: 400ms all linear;
+      }
+    }
+    &-next {
+      right: -1.7rem;
+      &::before {
+        content: url("@img/icons/slider_btn.svg");
+        @include toRem(width, 56);
+        @include toRem(height, 56);
+      }
+
+      @include adaptive1340 {
+        right: -3.7rem;
+      }
+
+      @include adaptive1240 {
+        right: 0;
+      }
+
+      @include adaptive1110 {
+        right: 1.5rem;
+      }
+
+      @include adaptive480 {
+        right: 0.4rem;
+      }
+    }
+  }
+}

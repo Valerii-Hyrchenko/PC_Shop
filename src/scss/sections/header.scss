@@ -1,0 +1,225 @@
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  @include toRem(padding-top, 24);
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+
+  @include adaptive1110 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    backdrop-filter: blur(15px);
+    justify-content: flex-start;
+    display: none;
+  }
+
+  &__ul {
+    display: flex;
+
+    @include adaptive1110 {
+      flex-direction: column;
+      margin-top: 2rem;
+    }
+
+    &-a {
+      text-decoration: none;
+      transition: 300ms all linear;
+
+      @include adaptive1110 {
+        @include toRem(margin-bottom, 30);
+        text-align: center;
+      }
+
+      &:not(:last-of-type) {
+        @include toRem(margin-right, 48);
+        @include adaptive1110 {
+          margin-right: 0;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 300ms all linear;
+        & > li {
+          transition: 300ms all linear;
+          color: $base-blue;
+        }
+      }
+
+      @keyframes showHeader {
+        0% {
+          opacity: 0;
+          transform: scale(0, 0);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1, 1);
+        }
+      }
+
+      @keyframes hideHeader {
+        0% {
+          opacity: 1;
+          transform: scale(1, 1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0, 0);
+        }
+      }
+    }
+
+    &-li {
+      color: $base-white;
+      font-weight: 500;
+      @include toRem(font-size, 18);
+      line-height: 125%;
+      transition: 300ms all linear;
+    }
+  }
+
+  &__basket {
+    display: flex;
+
+    &-btn-wrap {
+      &:not(:last-of-type) {
+        @include toRem(margin-right, 16);
+      }
+    }
+    &-btn,
+    &-btn-search {
+      background-color: transparent;
+      @include toRem(padding, 14);
+      border: none;
+      line-height: 0;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: 400ms all linear;
+
+      &:hover {
+        background-color: $base-blue;
+        transition: 400ms all linear;
+      }
+    }
+
+    &-btn-search {
+      &::before {
+        @include toRem(width, 20);
+        @include toRem(height, 20);
+        content: url("@img/icons/header_shop_bar/search.svg");
+      }
+    }
+
+    &-btn {
+      &::before {
+        @include toRem(width, 20);
+        @include toRem(height, 20);
+        content: url("@img/icons/header_shop_bar/basket.svg");
+      }
+    }
+  }
+}
+
+.burger-checkbox {
+  position: absolute;
+  @include toRem(right, 50);
+  @include toRem(top, 30);
+  cursor: pointer;
+  z-index: 999;
+  margin: 1.125rem 0.3125rem 0 0;
+  max-width: 2.5rem;
+  display: none;
+
+  @include adaptive1110 {
+    display: block;
+  }
+
+  @include adaptive480 {
+    @include toRem(right, 20);
+  }
+
+  &-label {
+    display: flex;
+    flex-direction: column;
+    width: 2.5rem;
+    cursor: pointer;
+  }
+
+  &-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked ~ span:nth-of-type(1) {
+      transform-origin: bottom;
+      transform: rotateZ(45deg) translate(6px, 0px) scale(0.8, 0.8);
+    }
+
+    &:checked ~ span:nth-of-type(2) {
+      transform-origin: top;
+      transform: rotateZ(-45deg) scale(0.8, 0.8);
+    }
+
+    &:checked ~ span:nth-of-type(3) {
+      transform-origin: bottom;
+      width: 50%;
+      transform: translate(16px, -8px) rotatez(45deg) scale(0.8, 0.8);
+    }
+  }
+
+  &-anim-line {
+    background: $base-white;
+    border-radius: 10px;
+    @include toRem(height, 4);
+    margin: 0.25rem 0;
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    &:nth-of-type(1) {
+      width: 50%;
+    }
+
+    &:nth-of-type(2) {
+      width: 100%;
+    }
+
+    &:nth-of-type(3) {
+      width: 75%;
+    }
+  }
+}
+
+.background-shadow-rect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  @include toRem(height, 800);
+  background: linear-gradient(180deg, rgba(17, 20, 24, 0) 0%, #111418 100%),
+    linear-gradient(
+      153deg,
+      rgba(0, 0, 0, 0.08) 50.54%,
+      rgba(7, 110, 213, 0.06) 50%
+    );
+
+  @include adaptive1240 {
+    height: 85rem;
+    background: linear-gradient(180deg, rgba(17, 20, 24, 0) 0%, #111418 100%),
+      linear-gradient(
+        131deg,
+        rgba(0, 0, 0, 0.08) 50.54%,
+        rgba(7, 110, 213, 0.06) 50%
+      );
+  }
+}

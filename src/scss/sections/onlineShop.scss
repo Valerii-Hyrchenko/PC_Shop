@@ -1,0 +1,455 @@
+.online-shop {
+  position: relative;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include toRem(padding-top, 24);
+
+  @include adaptive1240 {
+    flex-direction: column;
+  }
+
+  &__pretitle {
+    @include toRem(font-size, 38);
+    font-weight: 300;
+    line-height: 120%;
+    color: $base-white;
+
+    @include adaptive820 {
+      @include toRem(font-size, 28);
+    }
+  }
+
+  &__title-wrap {
+    margin: 5.7rem 4.75rem 0 8rem;
+
+    @include adaptive1240 {
+      margin: 4rem;
+    }
+  }
+
+  &__title {
+    font-weight: 900;
+    @include toRem(font-size, 72);
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    @include toRem(max-width, 397);
+
+    @include adaptive820 {
+      @include toRem(font-size, 56);
+    }
+
+    @include adaptive480 {
+      @include toRem(font-size, 50);
+    }
+  }
+
+  &__location {
+    background-color: $base-yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include toRem(max-width, 144);
+    margin: 1.5rem 0 0 auto;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    border-radius: 0px 18px 18px 18px;
+
+    & > p {
+      font-weight: 500;
+      @include toRem(font-size, 16);
+      @include toRem(margin-left, 8);
+      line-height: 125%;
+      color: $base-dark;
+    }
+  }
+
+  &__marker {
+    &-wrap {
+      display: flex;
+      align-items: center;
+      @include toRem(margin-top, 82);
+
+      @include adaptive820 {
+        @include toRem(margin-top, 62);
+      }
+    }
+
+    &-text {
+      font-weight: 500;
+      @include toRem(font-size, 14);
+      @include toRem(margin-left, 8);
+      line-height: 120%;
+      color: $base-white;
+    }
+  }
+
+  &__slider-switch {
+    position: absolute;
+    left: -137%;
+    top: 31%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include adaptive1340 {
+      left: -117%;
+    }
+
+    @include adaptive1240 {
+      left: -30%;
+    }
+
+    @include adaptive1110 {
+      left: -20%;
+    }
+
+    @include adaptive550 {
+      left: 34%;
+      top: 92%;
+      transform: rotate(-45deg);
+    }
+
+    &-btn {
+      @include toRem(width, 4);
+      @include toRem(height, 24);
+      padding: 0;
+      border: none;
+      background-color: $base-no-active-white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $base-white;
+        transition: 500ms all linear;
+      }
+
+      &--active {
+        background-color: $base-white;
+      }
+    }
+    &-min,
+    &-max {
+      color: $base-white;
+
+      @include adaptive550 {
+        transform: rotate(90deg);
+      }
+    }
+
+    &-min {
+      @include toRem(margin-bottom, 24);
+    }
+
+    &-max {
+      @include toRem(margin-top, 24);
+    }
+  }
+
+  &__slider-background {
+    position: relative;
+    display: flex;
+    @include toRem(margin-right, 62);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 14rem;
+      @include toRem(width, 300);
+      @include toRem(height, 300);
+      background: $base-blue;
+      opacity: 0.4;
+      filter: blur(82px);
+
+      @include adaptive820 {
+        @include toRem(width, 220);
+        @include toRem(height, 220);
+        opacity: 0.5;
+        left: 8rem;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 10rem;
+      right: 14rem;
+      @include toRem(width, 300);
+      @include toRem(height, 300);
+      background: $base-yellow;
+      opacity: 0.2;
+      filter: blur(82px);
+
+      @include adaptive820 {
+        @include toRem(width, 220);
+        @include toRem(height, 220);
+        opacity: 0.3;
+        bottom: 6rem;
+        right: 11rem;
+      }
+    }
+
+    @include adaptive1240 {
+      margin: 0 0 0 4rem;
+    }
+
+    @include adaptive1110 {
+      margin: 0 0 0 10rem;
+    }
+
+    @include adaptive550 {
+      margin: 0;
+      flex-direction: column;
+    }
+
+    @include adaptive550 {
+      @include adaptive1110 {
+        margin: 0 0 0 -0.7rem;
+      }
+    }
+
+    @include adaptive550 {
+      @include adaptive1110 {
+        margin: 0 0 0 -3.2rem;
+      }
+    }
+  }
+
+  &__slider-wrap {
+    overflow: hidden;
+  }
+
+  &__slider-items-container {
+    position: relative;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    &-wrap {
+      position: relative;
+      z-index: 9;
+      @include toRem(margin-right, 24);
+      box-sizing: border-box;
+      @include toRem(min-width, 497);
+      @include toRem(min-height, 522);
+
+      @include adaptive820 {
+        @include toRem(min-width, 347);
+        @include toRem(min-height, 365);
+      }
+
+      @include adaptive550 {
+        transform: translateX(20px);
+      }
+
+      @include adaptive480 {
+        transform: scale(0.97, 0.97) translateX(30px);
+      }
+
+      @include adaptive360 {
+        transform: scale(0.9, 0.9) translateX(42px);
+      }
+    }
+
+    &-img-wrap {
+      @include toRem(width, 240);
+      margin: 0 auto;
+
+      & > img {
+        @include adaptive820 {
+          @include toRem(width, 180);
+          @include toRem(height, 365);
+        }
+      }
+    }
+
+    &-description {
+      position: absolute;
+      z-index: 9;
+      bottom: 0;
+      @include toRem(padding, 24);
+      backdrop-filter: blur(12px);
+      background: rgba(17, 20, 24, 0.4);
+      border-radius: 24px;
+      box-sizing: border-box;
+
+      @include adaptive820 {
+        padding: 0.8rem 1.1rem;
+      }
+
+      &-title {
+        font-weight: 700;
+        @include toRem(font-size, 32);
+        @include toRem(line-height, 35);
+        color: $base-white;
+
+        @include adaptive820 {
+          @include toRem(font-size, 25);
+          @include toRem(line-height, 28);
+        }
+      }
+
+      &-flex-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1.4rem 0;
+        @include toRem(row-gap, 20);
+        @include toRem(column-gap, 24);
+
+        @include adaptive820 {
+          margin: 0.8rem 0;
+          @include toRem(row-gap, 14);
+          @include toRem(column-gap, 18);
+        }
+      }
+
+      &-text-block {
+        @include toRem(width, 212);
+
+        @include adaptive820 {
+          @include toRem(width, 140);
+        }
+      }
+
+      &-text {
+        color: $base-white;
+        @include toRem(font-size, 14);
+        line-height: 125%;
+        opacity: 0.7;
+        font-weight: 500;
+
+        @include adaptive820 {
+          @include toRem(font-size, 11);
+        }
+
+        &:last-child {
+          @include adaptive820 {
+            @include toRem(font-size, 13);
+          }
+          opacity: 1;
+        }
+      }
+
+      &-btns-flex {
+        display: flex;
+        justify-content: space-between;
+
+        & > div {
+          position: relative;
+          line-height: 0;
+        }
+      }
+
+      &-btn {
+        padding: 1rem 2rem 1rem 4.25rem;
+        border-radius: 12px;
+        background-color: $base-blue;
+        color: $base-white;
+        border: 2px solid transparent;
+        box-sizing: border-box;
+        font-family: "Inter";
+        font-weight: 500;
+        @include toRem(font-size, 16);
+        line-height: 125%;
+        @include toRem(width, 216);
+        white-space: nowrap;
+        cursor: pointer;
+        transition: all 400ms linear;
+
+        &::before {
+          content: url("@img/icons/header_shop_bar/basket.svg");
+          position: absolute;
+          left: 14%;
+
+          @include adaptive820 {
+            bottom: 22%;
+            line-height: 0;
+            left: 7%;
+            transform: scale(0.8, 0.8);
+          }
+        }
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @include adaptive820 {
+          padding: 0.5rem 1rem 0.5rem 2rem;
+          @include toRem(font-size, 14);
+          @include toRem(width, 150);
+        }
+
+        &--second {
+          background-color: transparent;
+          border: 2px solid rgba(255, 255, 255, 0.1);
+          @include toRem(width, 209);
+          padding: 1rem 4.25rem 1rem 2rem;
+
+          @include adaptive820 {
+            padding: 0.5rem 2rem 0.5rem 0.6rem;
+          }
+
+          &::before {
+            content: url("@img/icons/shop_online/arrow_right.svg");
+            left: 76%;
+
+            @include adaptive820 {
+              left: 78%;
+            }
+          }
+
+          &:hover {
+            background-color: $base-blue;
+            border: 2px solid transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.scroll-to-top {
+  position: absolute;
+  z-index: 99;
+  bottom: 0;
+  right: 10%;
+  cursor: pointer;
+  display: none;
+
+  @include adaptive820 {
+    right: 15%;
+  }
+
+  @include adaptive480 {
+    right: 17%;
+  }
+  @include adaptive360 {
+    right: 20%;
+  }
+
+  &-img-wrap {
+    position: fixed;
+    bottom: 8%;
+    line-height: 0;
+    animation-name: show;
+    animation-duration: 450ms;
+    transition-timing-function: ease-in-out;
+
+    @keyframes show {
+      0% {
+        opacity: 0;
+        transform: scale(0.2, 0.2);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+    }
+  }
+}

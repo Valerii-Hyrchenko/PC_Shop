@@ -1,0 +1,91 @@
+$base-dark: #111418;
+$base-grey: #1e2429;
+$base-white: #ffffff;
+$base-light-white: rgba(255, 255, 255, 0.1);
+$base-no-active-white: rgba(255, 255, 255, 0.04);
+$base-yellow: #f6c90e;
+$base-blue: #076ed5;
+
+@mixin toRem($property, $value) {
+  #{$property}: calc($value / 16) + rem;
+}
+
+@mixin adaptive1340 {
+  @media (max-width: 1340px) {
+    @content;
+  }
+}
+
+@mixin adaptive1240 {
+  @media (max-width: 1240px) {
+    @content;
+  }
+}
+
+@mixin adaptive1110 {
+  @media (max-width: 1110px) {
+    @content;
+  }
+}
+
+@mixin adaptive820 {
+  @media (max-width: 820px) {
+    @content;
+  }
+}
+
+@mixin adaptive550 {
+  @media (max-width: 550px) {
+    @content;
+  }
+}
+
+@mixin adaptive480 {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin adaptive360 {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+
+body {
+  font-family: "Inter";
+  background-color: $base-dark;
+}
+
+.container {
+  @include toRem(max-width, 1296);
+  margin: 0 auto;
+
+  @include adaptive1340 {
+    max-width: 1200px;
+  }
+
+  @include adaptive1240 {
+    max-width: 1090px;
+  }
+
+  @include adaptive1110 {
+    max-width: 800px;
+  }
+
+  @include adaptive820 {
+    max-width: 550px;
+  }
+
+  @include adaptive550 {
+    max-width: 480px;
+  }
+
+  @include adaptive480 {
+    max-width: 360px;
+  }
+
+  @include adaptive360 {
+    max-width: 320px;
+  }
+}
