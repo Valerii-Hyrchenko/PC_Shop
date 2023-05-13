@@ -1,6 +1,7 @@
 import Slider from "./modules/Slider.js";
 import { setCheckboxListener } from "./modules/checkboxProcessing.js";
 import { setScrollToTopListener } from "./modules/scrollToTopListener.js";
+import { renderOnload } from "./modules/renderOnload.js";
 
 const useAllSliders = () => {
   const runHomeSlider = () => {
@@ -52,3 +53,4 @@ const useAllSliders = () => {
 useAllSliders();
 setCheckboxListener();
 setScrollToTopListener();
+renderOnload();
