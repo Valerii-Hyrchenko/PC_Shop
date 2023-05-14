@@ -27,6 +27,7 @@ export default class Slider {
       width1110: 2,
       width820: 1,
     };
+    this.isImgSwipe = true;
     this.setSliderWith();
     this.firstRender();
     this.setListeners();
@@ -149,5 +150,34 @@ export default class Slider {
         this.rollSlidesInfinity();
       });
     }
+
+    const setSwipeListener = () => {
+      let touchstartX = 0;
+      let touchendX = 0;
+
+      document.addEventListener("touchstart", (event) => {
+        touchstartX = event.changedTouches[0].screenX;
+      });
+
+      document.addEventListener("touchend", (event) => {
+        touchendX = event.changedTouches[0].screenX;
+        if (touchendX < touchstartX && this.isImgSwipe) {
+          this.isImgSwipe = false;
+          clearInterval(this.timeoutId);
+          this.rollOneSlide();
+          if (this.btn) {
+            this.btn.setAttribute("disabled", "");
+            setTimeout(() => {
+              this.btn.removeAttribute("disabled");
+            }, 850);
+          }
+          setTimeout(() => {
+            this.isImgSwipe = true;
+          }, 850);
+          this.rollSlidesInfinity();
+        }
+      });
+    };
+    setSwipeListener();
   }
 }
