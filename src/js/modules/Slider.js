@@ -155,11 +155,11 @@ export default class Slider {
       let touchstartX = 0;
       let touchendX = 0;
 
-      document.addEventListener("touchstart", (event) => {
+      this.block.addEventListener("touchstart", (event) => {
         touchstartX = event.changedTouches[0].screenX;
       });
 
-      document.addEventListener("touchend", (event) => {
+      this.block.addEventListener("touchend", (event) => {
         touchendX = event.changedTouches[0].screenX;
         if (touchendX < touchstartX && this.isImgSwipe) {
           this.isImgSwipe = false;
