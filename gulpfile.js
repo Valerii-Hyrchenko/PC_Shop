@@ -7,6 +7,7 @@ import { plugins } from "./gulp/config/plugins.js";
 import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
+import { fonts } from "./gulp/tasks/fonts.js";
 import { images } from "./gulp/tasks/images.js";
 
 global.app = {
@@ -19,15 +20,20 @@ global.app = {
 
 const watcher = () => {
   gulp.watch(path.watch.files, copy);
+  gulp.watch(path.watch.files, fonts);
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.scss, scss);
   gulp.watch(path.watch.js, js);
   gulp.watch(path.watch.images, images);
 };
 
-const mainTasks = gulp.parallel(copy, html, scss, js, images);
+const mainTasks = gulp.parallel(copy, fonts, html, scss, js, images);
 
-export const dev = gulp.series(reset, mainTasks, gulp.parallel (watcher, server));
+export const dev = gulp.series(
+  reset,
+  mainTasks,
+  gulp.parallel(watcher, server)
+);
 export const build = gulp.series(reset, mainTasks);
 
 gulp.task("default", dev);

@@ -6,6 +6,66 @@ $base-no-active-white: rgba(255, 255, 255, 0.04);
 $base-yellow: #f6c90e;
 $base-blue: #076ed5;
 
+@font-face {
+  font-family: "Inter";
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+  src: local("Inter"), url("@font/inter-thin.woff") format("woff"),
+    url("@font/inter-thin.woff2") format("woff2"),
+    url("@font/inter-thin.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: local("Inter"), url("@font/inter-light.woff") format("woff"),
+    url("@font/inter-light.woff2") format("woff2"),
+    url("@font/inter-light.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local("Inter"), url("@font/inter-regular.woff") format("woff"),
+    url("@font/inter-regular.woff2") format("woff2"),
+    url("@font/inter-regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: local("Inter"), url("@font/inter-medium.woff") format("woff"),
+    url("@font/inter-medium.woff2") format("woff2"),
+    url("@font/inter-medium.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local("Inter"), url("@font/inter-bold.woff") format("woff"),
+    url("@font/inter-bold.woff2") format("woff2"),
+    url("@font/inter-bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: local("Inter"), url("@font/inter-black.woff") format("woff"),
+    url("@font/inter-black.woff2") format("woff2"),
+    url("@font/inter-black.ttf") format("ttf");
+}
+
 @mixin toRem($property, $value) {
   #{$property}: calc($value / 16) + rem;
 }
@@ -53,7 +113,7 @@ $base-blue: #076ed5;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter";
   background-color: $base-dark;
 }
 

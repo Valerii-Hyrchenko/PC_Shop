@@ -85,6 +85,13 @@
       @include adaptive360 {
         transform: translateX(12px);
       }
+
+      &:hover {
+        & > div > img {
+          transform: scale(1.05, 1.05);
+          transition: 450ms all linear;
+        }
+      }
     }
 
     &-img-wrapper {
@@ -92,6 +99,7 @@
       margin: 0.5rem auto 0;
 
       & > img {
+        transition: 450ms all linear;
         @include adaptive820 {
           @include toRem(width, 150);
           @include toRem(height, 300);

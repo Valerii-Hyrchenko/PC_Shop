@@ -22,6 +22,7 @@ export const path = {
     webp: `${srcFolder}/img/**/*.webp`,
     scss: `${srcFolder}/scss/style.scss`,
     html: `${srcFolder}/*.html`,
+    fonts: `${srcFolder}/fonts/**/*.*`,
     files: `${srcFolder}/files/**/*.*`,
   },
   watch: {
@@ -29,6 +30,7 @@ export const path = {
     images: `${srcFolder}/img/**/*.{jpg, jpeg, png, gif, ico, svg, webp}`,
     scss: `${srcFolder}/scss/**/*.scss`,
     html: `${srcFolder}/**/*.html`,
+    fonts: `${srcFolder}/fonts/**/*.*`,
     files: `${srcFolder}/files/**/*.*`,
   },
   clean: buildFolder,
