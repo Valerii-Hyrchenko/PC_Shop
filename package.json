@@ -1,7 +1,7 @@
 {
   "name": "test_task",
   "version": "1.0.0",
-  "description": "test task landing",
+  "description": "PC_Shop_landing",
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
